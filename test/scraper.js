@@ -61,9 +61,8 @@ module.exports = {
         recipesPage.
             getRecipeUrls().
             then(function (urls) {
-                test.ok(
-                    urls.every(urlUtils.isOneDown(recipesPage.getUrl()))
-                );
+                var isOneDown = urlUtils.isOneDown(recipesPage.getUrl());
+                test.ok(urls.every(isOneDown));
                 test.done();
             }).
             done();
