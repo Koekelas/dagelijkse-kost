@@ -9,14 +9,15 @@ var fs = require("fs"),
     recipesPage = require("../../lib/scraper/recipesPage"),
 
     fixtureReader = (function fixtureReader() {
-        var readFile = q.denodeify(fs.readFile),
-
-            readFixture = function readFixture(fileName) {
-                return readFile(
-                    path.join(__dirname, fileName),
-                    {encoding: "utf8"}
-                );
-            },
+        var readFixture = (function () {
+                var readFile = q.denodeify(fs.readFile);
+                return function readFixture(fileName) {
+                    return readFile(
+                        path.join(__dirname, fileName),
+                        {encoding: "utf8"}
+                    );
+                };
+            }()),
 
             initialise = function initialise() {
                 return {readFixture: readFixture};
