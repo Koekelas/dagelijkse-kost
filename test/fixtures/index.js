@@ -7,6 +7,7 @@ var fs = require("fs"),
     q = require("q"),
     page = require("../../lib/scraper/page"),
     recipesPage = require("../../lib/scraper/recipesPage"),
+    recipePage = require("../../lib/scraper/recipePage"),
 
     fixtureReader = (function fixtureReader() {
         var readFixture = (function () {
@@ -42,8 +43,12 @@ var fs = require("fs"),
                 return recipesPage({page: createPage(RECIPES_URL, HOME_URL, fileName)});
             },
 
+            createRecipePage = function createRecipePage(url, fileName) {
+                return recipePage({page: createPage(url, RECIPES_URL, fileName)});
+            },
+
             initialise = function initialise() {
-                return {createRecipesPage: createRecipesPage};
+                return {createRecipesPage: createRecipesPage, createRecipePage: createRecipePage};
             };
 
         return initialise();
@@ -51,5 +56,25 @@ var fs = require("fs"),
 
 module.exports = {
     recipesPage: pageFactory.createRecipesPage("recipes.html"),
-    invalidRecipesPage: pageFactory.createRecipesPage("random.html")
+    invalidRecipesPage: pageFactory.createRecipesPage("random.html"),
+    cupcakesRecipePage: pageFactory.createRecipePage(
+        "http://www.een.be/programmas/dagelijkse-kost/recepten/aardappel-cupcakes",
+        "recipeAardappelCupcakes.html"
+    ),
+    balletjesRecipePage: pageFactory.createRecipePage(
+        "http://www.een.be/programmas/dagelijkse-kost/recepten/balletjes-in-tomatensaus",
+        "recipeBalletjesInTomatensaus.html"
+    ),
+    caesardressingRecipePage: pageFactory.createRecipePage(
+        "http://www.een.be/programmas/dagelijkse-kost/recepten/caesardressing",
+        "recipeCaesardressing.html"
+    ),
+    toastRecipePage: pageFactory.createRecipePage(
+        "http://www.een.be/programmas/dagelijkse-kost/recepten/zuiderse-toast-champignon-met-limoen-ricotta-en-rucola",
+        "recipeZuiderseToastChampignonMetLimoenRicottaEnRucola.html"
+    ),
+    invalidRecipePage: pageFactory.createRecipePage(
+        "http://www.een.be/programmas/dagelijkse-kost/recepten/random",
+        "random.html"
+    )
 };
