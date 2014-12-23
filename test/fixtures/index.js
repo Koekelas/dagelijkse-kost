@@ -59,19 +59,19 @@ module.exports = {
     invalidRecipesPage: pageFactory.createRecipesPage("random.html"),
     cupcakesRecipePage: pageFactory.createRecipePage(
         "http://www.een.be/programmas/dagelijkse-kost/recepten/aardappel-cupcakes",
-        "recipeAardappelCupcakes.html"
+        "aardappelCupcakesRecipe.html"
     ),
     balletjesRecipePage: pageFactory.createRecipePage(
         "http://www.een.be/programmas/dagelijkse-kost/recepten/balletjes-in-tomatensaus",
-        "recipeBalletjesInTomatensaus.html"
+        "balletjesInTomatensausRecipe.html"
     ),
     caesardressingRecipePage: pageFactory.createRecipePage(
         "http://www.een.be/programmas/dagelijkse-kost/recepten/caesardressing",
-        "recipeCaesardressing.html"
+        "caesardressingRecipe.html"
     ),
     toastRecipePage: pageFactory.createRecipePage(
         "http://www.een.be/programmas/dagelijkse-kost/recepten/zuiderse-toast-champignon-met-limoen-ricotta-en-rucola",
-        "recipeZuiderseToastChampignonMetLimoenRicottaEnRucola.html"
+        "zuiderseToastChampignonMetLimoenRicottaEnRucolaRecipe.html"
     ),
     invalidRecipePage: pageFactory.createRecipePage(
         "http://www.een.be/programmas/dagelijkse-kost/recepten/random",
