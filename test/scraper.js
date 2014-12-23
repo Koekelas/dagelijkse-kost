@@ -3,6 +3,7 @@
 "use strict";
 
 var url = require("url"),
+    lodash = require("lodash"),
     fixtures = require("./fixtures"),
 
     urlUtils = (function urlUtils() {
@@ -12,6 +13,13 @@ var url = require("url"),
                     hostname !== undefined;
             },
 
+            oneUp = function oneUp(path) {
+                if (path === "/") {
+                    throw {name: "unexpected path", message: "expected path to be different from root"};
+                }
+                return path.substring(0, path.lastIndexOf("/"));
+            },
+
             isSameResource = function isSameResource(parsedUrlLeft, parsedUrlRight) {
                 return parsedUrlLeft.protocol === parsedUrlRight.protocol &&
                     parsedUrlLeft.hostname === parsedUrlRight.hostname &&
@@ -19,27 +27,22 @@ var url = require("url"),
                     parsedUrlLeft.pathname === parsedUrlRight.pathname;
             },
 
-            oneUp = function oneUp(path) {
-                if (path === "/") {
-                    return path;
+            isDown = lodash.curry(function (num, fromUrl, u) {
+                var parsedUrl = url.parse(u);
+                try {
+                    parsedUrl.pathname = lodash.
+                        range(num).
+                        reduce(function (path) {
+                            return oneUp(path);
+                        }, parsedUrl.pathname);
+                } catch (exception) {
+                    return false;
                 }
-                return path.substring(0, path.lastIndexOf("/"));
-            },
-
-            isOneDown = function isOneDown(fromUrl) {
-                var parsedFromUrl = url.parse(fromUrl);
-                return function (u) {
-                    var parsedUrl = url.parse(u);
-                    if (isSameResource(parsedUrl, parsedFromUrl)) {
-                        return false;
-                    }
-                    parsedUrl.pathname = oneUp(parsedUrl.pathname);
-                    return isSameResource(parsedUrl, parsedFromUrl);
-                };
-            },
+                return isSameResource(parsedUrl, url.parse(fromUrl));
+            }),
 
             initialise = function initialise() {
-                return {isAbsolute: isAbsolute, isOneDown: isOneDown};
+                return {isAbsolute: isAbsolute, isDown: isDown};
             };
 
         return initialise();
@@ -51,7 +54,7 @@ module.exports = {
             recipesPage.
             getRecipeUrls().
             then(function (urls) {
-                test.ok(urls.every(urlUtils.isAbsolute));
+                test.strictEqual(urls.every(urlUtils.isAbsolute), true);
                 test.done();
             }).
             done();
@@ -61,8 +64,8 @@ module.exports = {
         recipesPage.
             getRecipeUrls().
             then(function (urls) {
-                var isOneDown = urlUtils.isOneDown(recipesPage.getUrl());
-                test.ok(urls.every(isOneDown));
+                var isDown = urlUtils.isDown(1, recipesPage.getUrl());
+                test.strictEqual(urls.every(isDown), true);
                 test.done();
             }).
             done();
@@ -72,7 +75,7 @@ module.exports = {
             recipesPage.
             getRecipeUrls().
             then(function (urls) {
-                test.equal(urls.length, 992);
+                test.strictEqual(urls.length, 992);
                 test.done();
             }).
             done();
@@ -82,7 +85,44 @@ module.exports = {
             invalidRecipesPage.
             getRecipeUrls().
             then(function (urls) {
-                test.equal(urls.length, 0);
+                test.strictEqual(urls.length, 0);
+                test.done();
+            }).
+            done();
+    },
+    getImageUrlShouldReturnAnAbsoluteUrl: function (test) {
+        fixtures.
+            balletjesRecipePage.
+            getImageUrl().
+            then(function (url) {
+                test.strictEqual(urlUtils.isAbsolute(url), true);
+                test.done();
+            }).
+            done();
+    },
+    getImageUrlShouldReturnAnImageUrl: function (test) {
+        fixtures.
+            balletjesRecipePage.
+            getImageUrl().
+            then(function (url) {
+                test.strictEqual(
+                    urlUtils.isDown(
+                        2,
+                        "http://www.een.be/files/een.be/imagecache/video_image/images/programmas/dagelijkse_kost",
+                        url
+                    ),
+                    true
+                );
+                test.done();
+            }).
+            done();
+    },
+    getImageUrlShouldReturnUndefinedWhenRecipePageIsInvalid: function (test) {
+        fixtures.
+            invalidRecipePage.
+            getImageUrl().
+            then(function (url) {
+                test.strictEqual(url, undefined);
                 test.done();
             }).
             done();

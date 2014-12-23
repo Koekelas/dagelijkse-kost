@@ -57,10 +57,6 @@ var fs = require("fs"),
 module.exports = {
     recipesPage: pageFactory.createRecipesPage("recipes.html"),
     invalidRecipesPage: pageFactory.createRecipesPage("random.html"),
-    cupcakesRecipePage: pageFactory.createRecipePage(
-        "http://www.een.be/programmas/dagelijkse-kost/recepten/aardappel-cupcakes",
-        "aardappelCupcakesRecipe.html"
-    ),
     balletjesRecipePage: pageFactory.createRecipePage(
         "http://www.een.be/programmas/dagelijkse-kost/recepten/balletjes-in-tomatensaus",
         "balletjesInTomatensausRecipe.html"
@@ -68,6 +64,10 @@ module.exports = {
     caesardressingRecipePage: pageFactory.createRecipePage(
         "http://www.een.be/programmas/dagelijkse-kost/recepten/caesardressing",
         "caesardressingRecipe.html"
+    ),
+    cupcakesRecipePage: pageFactory.createRecipePage(
+        "http://www.een.be/programmas/dagelijkse-kost/recepten/aardappel-cupcakes",
+        "aardappelCupcakesRecipe.html"
     ),
     toastRecipePage: pageFactory.createRecipePage(
         "http://www.een.be/programmas/dagelijkse-kost/recepten/zuiderse-toast-champignon-met-limoen-ricotta-en-rucola",
