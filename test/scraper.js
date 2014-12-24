@@ -27,7 +27,7 @@ var url = require("url"),
                     parsedUrlLeft.pathname === parsedUrlRight.pathname;
             },
 
-            isDown = lodash.curry(function (num, fromUrl, u) {
+            isDown = lodash.curry(function (fromUrl, num, u) {
                 var parsedUrl = url.parse(u);
                 try {
                     parsedUrl.pathname = lodash.
@@ -64,7 +64,7 @@ module.exports = {
         recipesPage.
             getRecipeUrls().
             then(function (urls) {
-                var isDown = urlUtils.isDown(1, recipesPage.getUrl());
+                var isDown = urlUtils.isDown(recipesPage.getUrl(), 1);
                 test.strictEqual(urls.every(isDown), true);
                 test.done();
             }).
@@ -107,8 +107,8 @@ module.exports = {
             then(function (url) {
                 test.strictEqual(
                     urlUtils.isDown(
-                        2,
                         "http://www.een.be/files/een.be/imagecache/video_image/images/programmas/dagelijkse_kost",
+                        2,
                         url
                     ),
                     true
