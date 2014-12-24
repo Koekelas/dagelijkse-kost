@@ -70,7 +70,8 @@ module.exports = {
         "aardappelCupcakesRecipe.html"
     ),
     toastRecipePage: pageFactory.createRecipePage(
-        "http://www.een.be/programmas/dagelijkse-kost/recepten/zuiderse-toast-champignon-met-limoen-ricotta-en-rucola",
+        "http://www.een.be/programmas/dagelijkse-kost/recepten/" +
+            "zuiderse-toast-champignon-met-limoen-ricotta-en-rucola",
         "zuiderseToastChampignonMetLimoenRicottaEnRucolaRecipe.html"
     ),
     invalidRecipePage: pageFactory.createRecipePage(

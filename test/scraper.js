@@ -107,7 +107,8 @@ module.exports = {
             then(function (url) {
                 test.strictEqual(
                     urlUtils.isDown(
-                        "http://www.een.be/files/een.be/imagecache/video_image/images/programmas/dagelijkse_kost",
+                        "http://www.een.be/files/een.be/imagecache/video_image/images/programmas/" +
+                            "dagelijkse_kost",
                         2,
                         url
                     ),
