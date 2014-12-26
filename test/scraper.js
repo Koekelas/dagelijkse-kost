@@ -84,5 +84,41 @@ module.exports = {
                 test.done();
             }).
             done();
+    },
+    getRecipeVariationUrlsShouldReturnAbsolureUrls: function (test) {
+        fixtures.
+            balletjesRecipePage.
+            getRecipeVariationUrls().
+            then(function (urls) {
+                test.done();
+            }).
+            done();
+    },
+    getRecipeVariationUrlsShouldReturnRecipeVariationUrls: function (test) {
+        fixtures.
+            balletjesRecipePage.
+            getRecipeVariationUrls().
+            then(function (urls) {
+                test.done();
+            }).
+            done();
+    },
+    getRecipeVariationUrlsShouldReturnAllRecipeVariationUrls: function (test) {
+        fixtures.
+            balletjesRecipePage.
+            getRecipeVariationUrls().
+            then(function (urls) {
+                test.done();
+            }).
+            done();
+    },
+    getRecipeVariationUrlsShouldReturnZeroRecipeVariationUrlsWhenRecipePageIsInvalid: function (test) {
+        fixtures.
+            invalidRecipePage.
+            getRecipeVariationUrls().
+            then(function (urls) {
+                test.done();
+            }).
+            done();
     }
 };
