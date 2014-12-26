@@ -21,8 +21,8 @@ module.exports = {
         recipesPage.
             getRecipeUrls().
             then(function (urls) {
-                var isNumDownFromUrl = urlUtils.isNumDownFromUrl(recipesPage.getUrl(), 1);
-                test.strictEqual(urls.every(isNumDownFromUrl), true);
+                var isNumDownFrom = urlUtils.isNumDownFrom(recipesPage.getUrl(), 1);
+                test.strictEqual(urls.every(isNumDownFrom), true);
                 test.done();
             }).
             done();
@@ -63,7 +63,7 @@ module.exports = {
             getImageUrl().
             then(function (url) {
                 test.strictEqual(
-                    urlUtils.isNumDownFromUrl(
+                    urlUtils.isNumDownFrom(
                         "http://www.een.be/files/een.be/imagecache/video_image/images/programmas/" +
                             "dagelijkse_kost",
                         2,
@@ -90,15 +90,20 @@ module.exports = {
             balletjesRecipePage.
             getRecipeVariationUrls().
             then(function (urls) {
+                test.strictEqual(urls.every(urlUtils.isAbsolute), true);
                 test.done();
             }).
             done();
     },
     getRecipeVariationUrlsShouldReturnRecipeVariationUrls: function (test) {
-        fixtures.
-            balletjesRecipePage.
+        var recipePage = fixtures.balletjesRecipePage,
+            refererUrl = recipePage.getUrl();
+        recipePage.
             getRecipeVariationUrls().
             then(function (urls) {
+                test.strictEqual(urls.every(function (url) {
+                    return url !== refererUrl && urlUtils.isSimilar(url, refererUrl);
+                }), true);
                 test.done();
             }).
             done();
@@ -108,6 +113,7 @@ module.exports = {
             balletjesRecipePage.
             getRecipeVariationUrls().
             then(function (urls) {
+                test.strictEqual(urls.length, 4);
                 test.done();
             }).
             done();
@@ -117,6 +123,7 @@ module.exports = {
             invalidRecipePage.
             getRecipeVariationUrls().
             then(function (urls) {
+                test.strictEqual(urls.length, 0);
                 test.done();
             }).
             done();
