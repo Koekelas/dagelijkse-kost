@@ -12,6 +12,7 @@ var fs = require("fs"),
     fixtureReader = (function fixtureReader() {
         var readFixture = (function () {
                 var readFile = q.denodeify(fs.readFile);
+
                 return function readFixture(fileName) {
                     return readFile(
                         path.join(__dirname, fileName),
