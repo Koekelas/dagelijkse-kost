@@ -135,6 +135,7 @@ module.exports = {
             then(function (recipe) {
                 test.deepEqual(recipe, {
                     name: "balletjes in tomatensaus",
+                    tags: ["hoofdgerecht", "klassieker"],
                     ingredients: {
                         servings: 4,
                         categories: [
@@ -191,6 +192,7 @@ module.exports = {
             then(function (recipe) {
                 test.deepEqual(recipe, {
                     name: "Caesardressing",
+                    tags: ["basistechnieken"],
                     ingredients: {
                         servings: 4,
                         categories: [
@@ -221,6 +223,7 @@ module.exports = {
             then(function (recipe) {
                 test.deepEqual(recipe, {
                     name: "aardappel-cupcakes",
+                    tags: ["snack", "vernieuwend"],
                     ingredients: {
                         servings: 4,
                         categories: [
@@ -252,6 +255,7 @@ module.exports = {
             then(function (recipe) {
                 test.deepEqual(recipe, {
                     name: "Zuiderse toast champignon met limoen-ricotta en rucola",
+                    tags: ["klassieker", "snack"],
                     ingredients: {
                         servings: 4,
                         categories: [
