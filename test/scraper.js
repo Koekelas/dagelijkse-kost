@@ -134,48 +134,51 @@ module.exports = {
             getRecipe().
             then(function (recipe) {
                 test.deepEqual(recipe, {
-                    servings: 4,
-                    categories: [
-                        {
-                            name: "tomatensaus",
-                            ingredients: [
-                                "200 g gezouten spek (1 dikke snee)",
-                                "3 uien",
-                                "2 teentjes look",
-                                "4 stengels selders",
-                                "1 dikke wortel",
-                                "800 g gepelde tomaten (in blik)",
-                                "500 g tomatenpulp (in blik of brik)",
-                                "80 g geconcentreerde tomatenpuree (in blik)",
-                                "4 dl water",
-                                "1⁄2 rode chilipeper",
-                                "enkele takjes verse tijm",
-                                "4 blaadjes laurier (vers of gedroogd)",
-                                "1 takje verse rozemarijn",
-                                "1 takje verse salie",
-                                "enkele takjes verse dragon",
-                                "een snuif gedroogde oregano",
-                                "een flinke eetlepel bloem",
-                                "1⁄2 eetlepel suiker",
-                                "een scheutje olijfolie",
-                                "peper",
-                                "zout"
-                            ]
-                        },
-                        {
-                            name: "balletjes",
-                            ingredients: [
-                                "1 kg gemengd gehakt (varken en rund)",
-                                "2 eieren",
-                                "4 eetlepels paneermeel",
-                                "1⁄2 bussel peterselie",
-                                "1 klontje boter",
-                                "een scheutje olijfolie",
-                                "peper",
-                                "zout"
-                            ]
-                        }
-                    ]
+                    name: "balletjes in tomatensaus",
+                    ingredients: {
+                        servings: 4,
+                        categories: [
+                            {
+                                name: "tomatensaus",
+                                ingredients: [
+                                    "200 g gezouten spek (1 dikke snee)",
+                                    "3 uien",
+                                    "2 teentjes look",
+                                    "4 stengels selders",
+                                    "1 dikke wortel",
+                                    "800 g gepelde tomaten (in blik)",
+                                    "500 g tomatenpulp (in blik of brik)",
+                                    "80 g geconcentreerde tomatenpuree (in blik)",
+                                    "4 dl water",
+                                    "1⁄2 rode chilipeper",
+                                    "enkele takjes verse tijm",
+                                    "4 blaadjes laurier (vers of gedroogd)",
+                                    "1 takje verse rozemarijn",
+                                    "1 takje verse salie",
+                                    "enkele takjes verse dragon",
+                                    "een snuif gedroogde oregano",
+                                    "een flinke eetlepel bloem",
+                                    "1⁄2 eetlepel suiker",
+                                    "een scheutje olijfolie",
+                                    "peper",
+                                    "zout"
+                                ]
+                            },
+                            {
+                                name: "balletjes",
+                                ingredients: [
+                                    "1 kg gemengd gehakt (varken en rund)",
+                                    "2 eieren",
+                                    "4 eetlepels paneermeel",
+                                    "1⁄2 bussel peterselie",
+                                    "1 klontje boter",
+                                    "een scheutje olijfolie",
+                                    "peper",
+                                    "zout"
+                                ]
+                            }
+                        ]
+                    }
                 });
                 test.done();
             }).
@@ -187,22 +190,25 @@ module.exports = {
             getRecipe().
             then(function (recipe) {
                 test.deepEqual(recipe, {
-                    servings: 4,
-                    categories: [
-                        {
-                            ingredients: [
-                                "3 zoute ansjovisfilets",
-                                "75 g geraspte Parmezaanse kaas",
-                                "2 dooiers",
-                                "1 dl yoghurt",
-                                "1 limoen (of limoensap)",
-                                "2 dl druivenpitolie",
-                                "1 teentje look",
-                                "1 pikante rode chilipeper",
-                                "1 eetlepel mosterd"
-                            ]
-                        }
-                    ]
+                    name: "Caesardressing",
+                    ingredients: {
+                        servings: 4,
+                        categories: [
+                            {
+                                ingredients: [
+                                    "3 zoute ansjovisfilets",
+                                    "75 g geraspte Parmezaanse kaas",
+                                    "2 dooiers",
+                                    "1 dl yoghurt",
+                                    "1 limoen (of limoensap)",
+                                    "2 dl druivenpitolie",
+                                    "1 teentje look",
+                                    "1 pikante rode chilipeper",
+                                    "1 eetlepel mosterd"
+                                ]
+                            }
+                        ]
+                    }
                 });
                 test.done();
             }).
@@ -214,23 +220,26 @@ module.exports = {
             getRecipe().
             then(function (recipe) {
                 test.deepEqual(recipe, {
-                    servings: 4,
-                    categories: [
-                        {
-                            ingredients: [
-                                "4 sneetjes chorizo (dikke; 4-5 mm)",
-                                "6 kwartjes van artisjokken (opgelegd in olie)",
-                                "2 eieren",
-                                "1 ui",
-                                "2 eetlepels verse geitenkaas",
-                                "2 eetlepels bloem",
-                                "1 koffielepel bakpoeder",
-                                "1 eetlepel fijngehakte verse oregano",
-                                "1 scheutje olijfolie",
-                                "1 kg aardappelen (loskokend)"
-                            ]
-                        }
-                    ]
+                    name: "aardappel-cupcakes",
+                    ingredients: {
+                        servings: 4,
+                        categories: [
+                            {
+                                ingredients: [
+                                    "4 sneetjes chorizo (dikke; 4-5 mm)",
+                                    "6 kwartjes van artisjokken (opgelegd in olie)",
+                                    "2 eieren",
+                                    "1 ui",
+                                    "2 eetlepels verse geitenkaas",
+                                    "2 eetlepels bloem",
+                                    "1 koffielepel bakpoeder",
+                                    "1 eetlepel fijngehakte verse oregano",
+                                    "1 scheutje olijfolie",
+                                    "1 kg aardappelen (loskokend)"
+                                ]
+                            }
+                        ]
+                    }
                 });
                 test.done();
             }).
@@ -242,37 +251,40 @@ module.exports = {
             getRecipe().
             then(function (recipe) {
                 test.deepEqual(recipe, {
-                    servings: 4,
-                    categories: [
-                        {
-                            name: "brood met paddestoelen",
-                            ingredients: [
-                                "2 dikke sneden zuurdesembrood (2cm dik)",
-                                "750 g gemengde paddestoelen: een selectie van bv. oesterzwammen, " +
-                                    "cantharellen, eekhoorntjesbrood, kastanjechampignons, …",
-                                "2 grote sjalotten",
-                                "1 teentje look",
-                                "2 takjes tijm",
-                                "1 takje rozemarijn",
-                                "3 blaadjes salie",
-                                "scheutjes fijne olijfolie",
-                                "peper",
-                                "zout"
-                            ]
-                        },
-                        {
-                            name: "limoen-ricotta",
-                            ingredients: [
-                                "400 g ricotta",
-                                "1⁄2 limoen (onbehandeld)",
-                                "4 eetlepels fijne olijfolie",
-                                "peper",
-                                "zout",
-                                "100 g rucola",
-                                "scheutjes balsamico"
-                            ]
-                        }
-                    ]
+                    name: "Zuiderse toast champignon met limoen-ricotta en rucola",
+                    ingredients: {
+                        servings: 4,
+                        categories: [
+                            {
+                                name: "brood met paddestoelen",
+                                ingredients: [
+                                    "2 dikke sneden zuurdesembrood (2cm dik)",
+                                    "750 g gemengde paddestoelen: een selectie van bv. oesterzwammen, " +
+                                        "cantharellen, eekhoorntjesbrood, kastanjechampignons, …",
+                                    "2 grote sjalotten",
+                                    "1 teentje look",
+                                    "2 takjes tijm",
+                                    "1 takje rozemarijn",
+                                    "3 blaadjes salie",
+                                    "scheutjes fijne olijfolie",
+                                    "peper",
+                                    "zout"
+                                ]
+                            },
+                            {
+                                name: "limoen-ricotta",
+                                ingredients: [
+                                    "400 g ricotta",
+                                    "1⁄2 limoen (onbehandeld)",
+                                    "4 eetlepels fijne olijfolie",
+                                    "peper",
+                                    "zout",
+                                    "100 g rucola",
+                                    "scheutjes balsamico"
+                                ]
+                            }
+                        ]
+                    }
                 });
                 test.done();
             }).
