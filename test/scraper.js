@@ -147,6 +147,7 @@ module.exports = {
                             "smaken heel lekker met bv. verse aardappelpuree, maar dat kunnen net zo " +
                             "goed frietjes of rijst zijn. Dat beslis je zelf!"
                     ],
+                    price: 3,
                     ingredients: {
                         servings: 4,
                         categories: [
@@ -244,6 +245,7 @@ module.exports = {
                             "een hoofdgerecht met vlees, vis of kip. Kortom, met een simpel patatje kan " +
                             "je heel erg leuke dingen doen."
                     ],
+                    price: 1.5,
                     ingredients: {
                         servings: 4,
                         categories: [
@@ -285,6 +287,7 @@ module.exports = {
                             "die iedereen naar smaak en aanbod kan samenstellen. Zuurdesembrood is zeer " +
                             "geschikt voor de toast."
                     ],
+                    price: 4,
                     ingredients: {
                         servings: 4,
                         categories: [
