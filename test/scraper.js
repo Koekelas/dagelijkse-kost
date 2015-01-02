@@ -137,6 +137,16 @@ module.exports = {
                     name: "balletjes in tomatensaus",
                     tags: ["hoofdgerecht", "klassieker"],
                     cookingTime: "80 minuten",
+                    introduction: [
+                        "Balletjes in tomatensaus, da’s wellicht één van de allerlekkerste gerechten uit " +
+                            "onze Vlaamse keuken. Voor de tomatensaus heb je wel heel wat ingrediënten " +
+                            "nodig, want alleen zo krijgt de saus heel veel smaak. Dat is het geheim van " +
+                            "een top-tomatensaus.",
+                        "Gehaktballetjes maken is helemaal niet moeilijk, en als je de twee nadien " +
+                            "samenbrengt in één pot dan is het pas echt smullen geblazen! De balletjes " +
+                            "smaken heel lekker met bv. verse aardappelpuree, maar dat kunnen net zo " +
+                            "goed frietjes of rijst zijn. Dat beslis je zelf!"
+                    ],
                     ingredients: {
                         servings: 4,
                         categories: [
@@ -227,6 +237,13 @@ module.exports = {
                     name: "aardappel-cupcakes",
                     tags: ["snack", "vernieuwend"],
                     cookingTime: "80 minuten (incl. 30 minuten baktijd)",
+                    introduction: [
+                        "Zoete cupcakes zijn helemaal ‘in’. Jeroen doet een beetje tegendraads en maakt " +
+                            "hartige cupcakes op basis van aardappelen. Ze zijn lekker als snack, maar " +
+                            "je kan ze net zo goed serveren als een origineel aardappelalternatief bij " +
+                            "een hoofdgerecht met vlees, vis of kip. Kortom, met een simpel patatje kan " +
+                            "je heel erg leuke dingen doen."
+                    ],
                     ingredients: {
                         servings: 4,
                         categories: [
@@ -260,6 +277,14 @@ module.exports = {
                     name: "Zuiderse toast champignon met limoen-ricotta en rucola",
                     tags: ["klassieker", "snack"],
                     cookingTime: "30 minuten",
+                    introduction: [
+                        "De ‘toast champignon’ is een onverwoestbare klassieker uit de bistrokeuken. ’t " +
+                            "Is een redelijk zwaar gerecht en daarom bedacht Jeroen de Zuiderse versie " +
+                            "van de toast met een fris kaasmengsel van ricotta en een beetje limoen. De " +
+                            "klassieke Parijse champignons vervangt hij door een paddenstoelenmengeling " +
+                            "die iedereen naar smaak en aanbod kan samenstellen. Zuurdesembrood is zeer " +
+                            "geschikt voor de toast."
+                    ],
                     ingredients: {
                         servings: 4,
                         categories: [
