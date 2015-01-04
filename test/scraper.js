@@ -191,7 +191,98 @@ module.exports = {
                                 ]
                             }
                         ]
-                    }
+                    },
+                    instructions: [
+                        {
+                            name: "tomatensaus",
+                            instructions: [
+                                "Pel de uien. Snij eerst het topje en het kontje eraf en maak een ondiep " +
+                                    "sneetje in de zijkant. Trek de pel eraf en snij de uien eerst in " +
+                                    "helften, dan in dikke schijven en vervolgens in stukjes.",
+                                "Verhit een scheutje olijfolie in een stoofpot op een zacht vuur. Doe de " +
+                                    "stukjes ui erin en laat ze enkele minuten rustig stoven. Roer af en " +
+                                    "toe eens in de pot met een houten lepel.",
+                                "Druk op de teentjes look tot ze barsten. Daarna kan je de pel er " +
+                                    "makkelijk afhalen. Snij de teentjes in stukjes en doe ze bij de uien.",
+                                "Spoel de stengels selder schoon zodat er geen aarde of zand op " +
+                                    "achterblijft. Snij de stengels eerst in lange fijne repen en dan in " +
+                                    "fijne stukjes van ongeveer één tot twee centimeter.",
+                                "Gooi de stukjes selder bij de uien en roer.",
+                                "Schil de wortel. Neem de peen stevig vast bij het uiteinde en trek er " +
+                                    "met de dunschiller reepjes schil van af. Snij het kontje en de top " +
+                                    "eraf. Snij één fijn reepje van de wortel en zo zal hij stabiel op " +
+                                    "je plank blijven liggen. Snij de groente vervolgens eerst in " +
+                                    "reepjes en dan in blokjes. Laat de oranje stukjes ook even " +
+                                    "meestoven met de andere groenten.",
+                                "Snij de hete chilipeper in fijne stukjes en laat die meestoven. Voor 4 " +
+                                    "personen is een halve chilipeper voldoende, tenzij je van een extra " +
+                                    "pikante saus houdt.",
+                                "Doe ook de dikke snee gezouten (of gerookt) spek in de pot. Door het " +
+                                    "vlees mee te stoven zal de saus extra lekker smaken.",
+                                "Laat alle groenten nog 10 minuten zacht sudderen tot ze wat ‘plat’ " +
+                                    "gestoofd zijn.",
+                                "Open het blikje geconcentreerde tomatenpuree en schep het bij de " +
+                                    "groenten. Roer goed!",
+                                "Strooi er ook een beetje suiker bij en roer.",
+                                "Poeder de bloem over de gestoofde groenten en roer. Blijf roeren, en " +
+                                    "kijk uit dat de saus niet aanbrandt.",
+                                "Blus het geheel met een flinke scheut water.",
+                                "Giet de gepelde tomaten en de tomatenpulp in de pot.",
+                                "In de tomatensaus moet veel smaak zitten van lekkere verse kruiden. " +
+                                    "Bind ze samen met een beetje keukentouw. Om het op z’n Frans te " +
+                                    "zeggen: maak een ‘bouquet garni’ van een takje rozemarijn, een " +
+                                    "takje salie, een paar takjes dragon en tijm en enkele blaadjes " +
+                                    "laurier. Gooi het kruidentuiltje bij de groenten.",
+                                "Voeg ook een flinke snuif gedroogde oregano toe.",
+                                "Zet het deksel op de pot en laat de saus een uurtje sudderen op een " +
+                                    "heel zacht vuur."
+                            ]
+                        },
+                        {
+                            name: "balletjes",
+                            instructions: [
+                                "Stort het gehakt in een grote mengschaal.",
+                                "Breek de eitjes en doe ze bij het vlees.",
+                                "Spoel de peterselie en laat het kruid uitlekken. Doe de fijn gesneden " +
+                                    "peterselie bij het gehakt.",
+                                "Was je handen en meng alles wat in de schaal ligt. Voeg tussendoor een " +
+                                    "beetje paneermeel (‘chapelure’) toe en blijf kneden.",
+                                "Was je handen opnieuw en proef even van het gehaktmengsel. Voeg naar " +
+                                    "smaak een beetje peper en zout toe. Meng alles een laatste keer en " +
+                                    "dan kan je balletjes rollen.",
+                                "Rol balletjes die ongeveer 4 centimeter dik zijn. Probeer ze ongeveer " +
+                                    "even groot te maken. Maak tussendoor je handen even nat, zodat je " +
+                                    "de porties vlees heel glad kan rollen. Leg alle balletjes op een " +
+                                    "bord.",
+                                "Zet een grote braadpan op een matig vuur. Smelt er een klontje boter in " +
+                                    "én doe er ook een scheutje olijfolie bij.",
+                                "Leg de pan vol met balletjes en laat ze enkele minuten bakken. De " +
+                                    "balletjes moeten bruin korstje krijgen. Draai de balletjes tijdig " +
+                                    "én voorzichtig. om. Binnenin hoeven ze nog niet doorbakken te zijn.",
+                                "Als je nog meer balletjes hebt, dan bak je die in een tweede beurt.",
+                                "Spoel nadien je werkplank schoon. In de keuken is hygiëne zeer " +
+                                    "belangrijjk."
+                            ]
+                        },
+                        {
+                            name: "afwerking",
+                            instructions: [
+                                "Haal het stuk spek en het kruidentuiltje uit de saus. Die ingrediënten " +
+                                    "hebben hun werk gedaan.",
+                                "Zet de staafmixer in de saus. Mix voorzichtig tot de saus glad is.",
+                                "Proef de saus en beslis of er nog een beetje zout en peper bij moet. " +
+                                    "Roer de saus daarna nog even.",
+                                "Neem een lege kookpot en plaats er een zeef in. Schep een deel van de " +
+                                    "saus in de zeef en maak draaibewegingen met de pollepel. Zo duw je " +
+                                    "de saus geduldig door de gaatjes van de zeef. Alle taaie stukjes en " +
+                                    "vezels zullen in de zeef achterblijven. Die droge pulp gooi je weg. " +
+                                    "Ga zo door tot de hele pot tomatensaus gezeefd is.",
+                                "Laat de saus opwarmen op een zacht vuur en leg er de gehaktballetjes " +
+                                    "in. Na 10 minuten is het gerecht klaar.",
+                                "Serveer de balletjes in tomatensaus bv. met verse aardappelpuree."
+                            ]
+                        }
+                    ]
                 });
                 test.done();
             }).
@@ -223,7 +314,25 @@ module.exports = {
                                 ]
                             }
                         ]
-                    }
+                    },
+                    instructions: [
+                        {
+                            instructions: [
+                                "Schil en ontzaad de chilipeper. Tip: Heb je een gasfornuis, blaker de " +
+                                    "peper dan vooraf zwart boven het vuur. Daarna kan je de vrucht heel " +
+                                    "makkelijk schillen.",
+                                "Meng de dooiers en de ansjovisfilets in een blender samen met een " +
+                                    "beetje water, een eetlepel mosterd, het sap van een limoen en een " +
+                                    "teentje look.",
+                                "Mix dat alles fijn.",
+                                "Laat de blender draaien en leng het mengsel aan met de druivenpitolie " +
+                                    "(zoals bij het maken van mayonaise).",
+                                "Voeg daarna de yoghurt en parmezaan toe.",
+                                "Mix de dressing een laatste keer en kruid met peper en eventueel een " +
+                                    "beetje zout. (De ansjovis zorgt al voor een zoute smaak.)"
+                            ]
+                        }
+                    ]
                 });
                 test.done();
             }).
@@ -264,7 +373,35 @@ module.exports = {
                                 ]
                             }
                         ]
-                    }
+                    },
+                    instructions: [
+                        {
+                            instructions: [
+                                "Schil de aardappelen en kook ze extra gaar in gezouten water.",
+                                "Versnipper de ui en snij de dikke sneetjes chorizo in kleine blokjes. " +
+                                    "Snij ook de opgelegde artisjokken in stukjes.",
+                                "Stoof de ui aan in een pan met een scheutje olijfolie.",
+                                "Voeg daarna de blokjes chorizo toe en laat ze kort meestoven. Doe " +
+                                    "hetzelfde met de stukjes artisjok.",
+                                "Giet de gekookte aardappelen af en voeg er de geitenkaas aan toe. Stamp " +
+                                    "tot een fijne (droge) puree.",
+                                "Hak de verse oregano fijn.",
+                                "Meng de ui, de chorizo, de stukjes artisjok en de oregano onder de puree.",
+                                "Verwarm de oven voor op 170°C.",
+                                "Breek de eieren en hou de eiwitten apart.",
+                                "Meng de dooiers samen met de bloem en het bakpoeder onder de lauwe puree.",
+                                "Roer alles tot een aardappelbeslag en laat dit verder lauw worden.",
+                                "Klop de eiwitten stijf en spatel ze onder het beslag. Let erop dat je " +
+                                    "puree niet te warm is, want anders verliest het luchtige eiwit z’n " +
+                                    "effect.",
+                                "Doe het beslag in een plastic spuitzak, knip het puntje eraf en verdeel " +
+                                    "het over de cups.",
+                                "Bak de cakes gedurende 30 minuten in de voorverwarmde oven (170°C). " +
+                                    "Serveer ze als aardappelsnack, of als een originele " +
+                                    "aardappelbereiding bij een hoofdgerecht."
+                            ]
+                        }
+                    ]
                 });
                 test.done();
             }).
@@ -320,7 +457,53 @@ module.exports = {
                                 ]
                             }
                         ]
-                    }
+                    },
+                    instructions: [
+                        {
+                            name: "brood met paddestoelen",
+                            instructions: [
+                                "Verzamel de paddenstoelen en maak ze schoon. Borstel restjes aarde weg " +
+                                    "en snij ook te taaie steelstukjes weg.",
+                                "Scheur oesterzwammen in brute stukken.",
+                                "Eekhoorntjesbrood: Schil de onderkant van de dikke stelen van de " +
+                                    "paddenstoelen. Veeg alle restjes aarde weg. Snij ze nadien in " +
+                                    "hapklare stukken.",
+                                "Verwarm alvast de grillpan op een stevig vuur. Laat ze 10 minuten " +
+                                    "opwarmen, zodat je straks kort en krachtig kan grillen.",
+                                "Pel de sjalotten en snij ze in lange repen. Plet de look tot pulp en " +
+                                    "doe alles in een mengschaal.",
+                                "Spoel de tuinkruiden. Rits de blaadjes van de rozemarijn en de tijm. " +
+                                    "Houterige steeltjes gooi je weg. Hak de blaadjes salie, rozemarijn " +
+                                    "en tijm zo fijn mogelijk en doe de fijne kruiden bij de sjalotten.",
+                                "Spoel de rucola spoelen en laat de blaadjes uitlekken.",
+                                "Zet de ovengrill op.",
+                                "Snij de dikke sneden brood in gelijke helften, druppel er een beetje " +
+                                    "fijne olijfolie over en leg ze op de hete grill. Geef elk stuk " +
+                                    "brood langs de beide zijden een gebrand patroon.",
+                                "Schuif het gegrilde brood in de oven en toast het zacht-knapperig.",
+                                "Roer de paddenstoelen door de repen sjalot met lookpulp en fijne " +
+                                    "kruiden. Kruid de mix met wat peper van de molen en een beetje zout.",
+                                "Druppel een klein beetje fijne olijfolie over de paddenstoelen. " +
+                                    "(Overdrijf niet, en vermijd dat de vlam in de hete grillpan slaat.)",
+                                "Gril de paddenstoelenmix gedurende 2 tot 3 minuten. Roer alles " +
+                                    "regelmatig om, bv. met behulp van een keukentang."
+                            ]
+                        },
+                        {
+                            name: "limoen-ricotta",
+                            instructions: [
+                                "Schep de ricotta in een mengschaal. Rasp er wat fijne zeste van een " +
+                                    "onbehandelde limoen overheen.",
+                                "Schenk er ook een beetje fijne olijfolie bij en voeg peper van de molen " +
+                                    "en wat zout toe. Roer alle ingrediënten.",
+                                "Schep op elke gegrilde toast een flinke laag limoen-ricotta. Schik er " +
+                                    "vervolgens gegrilde paddenstoelen bovenop en eindig met een toefje " +
+                                    "rucola.",
+                                "Druppel tenslotte nog een likje balsamico over de rucola en serveer de " +
+                                    "Zuiderse ‘toasts champignon’ meteen."
+                            ]
+                        }
+                    ]
                 });
                 test.done();
             }).
