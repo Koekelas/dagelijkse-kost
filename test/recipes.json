@@ -15,7 +15,7 @@
     "price": 3,
     "ingredients": {
       "servings": 4,
-      "categories": [
+      "groups": [
         {
           "name": "tomatensaus",
           "ingredients": [
@@ -114,7 +114,7 @@
     "cookingTime": "15 minuten",
     "ingredients": {
       "servings": 4,
-      "categories": [
+      "groups": [
         {
           "ingredients": [
             "3 zoute ansjovisfilets",
@@ -158,7 +158,7 @@
     "price": 1.5,
     "ingredients": {
       "servings": 4,
-      "categories": [
+      "groups": [
         {
           "ingredients": [
             "4 sneetjes chorizo (dikke; 4-5 mm)",
@@ -210,7 +210,7 @@
     "price": 4,
     "ingredients": {
       "servings": 4,
-      "categories": [
+      "groups": [
         {
           "name": "brood met paddestoelen",
           "ingredients": [
