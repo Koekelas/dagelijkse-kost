@@ -2,17 +2,44 @@
 
 "use strict";
 
-var scraper = require("./lib/scraper");
+var q = require("q"),
+    scraper = require("./lib/scraper");
 
 scraper.
     createRecipesPage().
     getRecipeUrls().
-    then(function (urls) {
-        return scraper.
-            createRecipePage(urls[0]).
-            getRecipe();
+    then(function (recipeUrls) {
+        var recipePage = scraper.createRecipePage(recipeUrls[0]);
+        return q.all([
+            recipePage.getRecipe(),
+            recipePage.
+                getImageUrl().
+                then(function (imageUrl) {
+                    return scraper.
+                        createImage(imageUrl, recipePage.getUrl()).
+                        stringify();
+                }),
+            recipePage.
+                getRecipeVariationUrls().
+                then(function (variationUrls) {
+                    return q.all(variationUrls.map(function (variationUrl) {
+                        return scraper.
+                            createRecipeVariationPage(variationUrl, recipePage.getUrl()).
+                            getIngredients();
+                    }));
+                })
+        ]);
+    }).
+    spread(function (recipe, image, ingredientVariations) {
+        recipe.image = image;
+        recipe.ingredients = [recipe.ingredients].
+            concat(ingredientVariations).
+            sort(function (left, right) {
+                return left.servings - right.servings;
+            });
+        return recipe;
     }).
     then(function (recipe) {
-        console.log(recipe);
+        console.log(JSON.stringify(recipe));
     }).
     done();
