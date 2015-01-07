@@ -2,7 +2,8 @@
 
 "use strict";
 
-var fixtures = require("./fixtures"),
+var q = require("q"),
+    fixtures = require("./fixtures"),
     urlUtils = require("./utils/urlUtils"),
     recipes = require("./recipes.json");
 
@@ -19,11 +20,11 @@ module.exports = {
     },
     getRecipeUrlsShouldReturnRecipeUrls: function (test) {
         var recipesPage = fixtures.recipesPage;
-        recipesPage.
-            getRecipeUrls().
-            then(function (urls) {
-                var isNumDownFrom = urlUtils.isNumDownFrom(recipesPage.getUrl(), 1);
-                test.strictEqual(urls.every(isNumDownFrom), true);
+        q.
+            all([recipesPage.getUrl(), recipesPage.getRecipeUrls()]).
+            spread(function (recipesUrl, recipeUrls) {
+                var isNumDownFrom = urlUtils.isNumDownFrom(recipesUrl, 1);
+                test.strictEqual(recipeUrls.every(isNumDownFrom), true);
                 test.done();
             }).
             done();
@@ -97,13 +98,12 @@ module.exports = {
             done();
     },
     getRecipeVariationUrlsShouldReturnRecipeVariationUrls: function (test) {
-        var recipePage = fixtures.balletjesRecipePage,
-            refererUrl = recipePage.getUrl();
-        recipePage.
-            getRecipeVariationUrls().
-            then(function (urls) {
-                test.strictEqual(urls.every(function (url) {
-                    return url !== refererUrl && urlUtils.isSimilar(url, refererUrl);
+        var recipePage = fixtures.balletjesRecipePage;
+        q.
+            all([recipePage.getUrl(), recipePage.getRecipeVariationUrls()]).
+            spread(function (recipeUrl, variationUrls) {
+                test.strictEqual(variationUrls.every(function (variationUrl) {
+                    return variationUrl !== recipeUrl && urlUtils.isSimilar(variationUrl, recipeUrl);
                 }), true);
                 test.done();
             }).

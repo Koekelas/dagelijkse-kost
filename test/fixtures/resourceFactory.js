@@ -13,9 +13,12 @@ module.exports = (function resourceFactory() {
 
         createPage = function createPage(url, refererUrl, fileName) {
             return page({
-                url: url,
                 refererUrl: refererUrl,
-                html: fixtureReader.readFixture(fileName)
+                response: fixtureReader.
+                    readFixture(fileName).
+                    then(function (body) {
+                        return {url: url, body: body};
+                    })
             });
         },
 
