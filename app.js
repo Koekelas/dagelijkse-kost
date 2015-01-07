@@ -5,11 +5,11 @@
 var q = require("q"),
     scraper = require("./lib/scraper");
 
-scraper.
-    createRecipesPage().
+var recipesPage = scraper.createRecipesPage();
+recipesPage.
     getRecipeUrls().
     then(function (recipeUrls) {
-        var recipePage = scraper.createRecipePage(recipeUrls[0]);
+        var recipePage = scraper.createRecipePage(recipeUrls[0], recipesPage.getUrl());
         return q.all([
             recipePage.getRecipe(),
             recipePage.
@@ -24,7 +24,7 @@ scraper.
                 then(function (variationUrls) {
                     return q.all(variationUrls.map(function (variationUrl) {
                         return scraper.
-                            createRecipeVariationPage(variationUrl, recipePage.getUrl()).
+                            createRecipePage(variationUrl, recipePage.getUrl()).
                             getIngredients();
                     }));
                 })

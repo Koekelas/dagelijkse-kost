@@ -14,10 +14,7 @@ var fs = require("fs"),
                 var readFile = q.denodeify(fs.readFile);
 
                 return function readFixture(fileName) {
-                    return readFile(
-                        path.join(__dirname, fileName),
-                        {encoding: "utf8"}
-                    );
+                    return readFile(path.join(__dirname, fileName), {encoding: "utf8"});
                 };
             }()),
 
@@ -28,7 +25,7 @@ var fs = require("fs"),
         return initialise();
     }()),
 
-    pageFactory = (function pageFactory() {
+    resourceFactory = (function resourceFactory() {
         var HOME_URL = "http://www.een.be/programmas/dagelijkse-kost",
             RECIPES_URL = "http://www.een.be/programmas/dagelijkse-kost/recepten",
 
@@ -56,26 +53,26 @@ var fs = require("fs"),
     }());
 
 module.exports = {
-    recipesPage: pageFactory.createRecipesPage("recipes.html"),
-    invalidRecipesPage: pageFactory.createRecipesPage("random.html"),
-    balletjesRecipePage: pageFactory.createRecipePage(
+    recipesPage: resourceFactory.createRecipesPage("recipes.html"),
+    invalidRecipesPage: resourceFactory.createRecipesPage("random.html"),
+    balletjesRecipePage: resourceFactory.createRecipePage(
         "http://www.een.be/programmas/dagelijkse-kost/recepten/balletjes-in-tomatensaus",
         "balletjesInTomatensausRecipe.html"
     ),
-    caesardressingRecipePage: pageFactory.createRecipePage(
+    caesardressingRecipePage: resourceFactory.createRecipePage(
         "http://www.een.be/programmas/dagelijkse-kost/recepten/caesardressing",
         "caesardressingRecipe.html"
     ),
-    cupcakesRecipePage: pageFactory.createRecipePage(
+    cupcakesRecipePage: resourceFactory.createRecipePage(
         "http://www.een.be/programmas/dagelijkse-kost/recepten/aardappel-cupcakes",
         "aardappelCupcakesRecipe.html"
     ),
-    toastRecipePage: pageFactory.createRecipePage(
+    toastRecipePage: resourceFactory.createRecipePage(
         "http://www.een.be/programmas/dagelijkse-kost/recepten/" +
             "zuiderse-toast-champignon-met-limoen-ricotta-en-rucola",
         "zuiderseToastChampignonMetLimoenRicottaEnRucolaRecipe.html"
     ),
-    invalidRecipePage: pageFactory.createRecipePage(
+    invalidRecipePage: resourceFactory.createRecipePage(
         "http://www.een.be/programmas/dagelijkse-kost/recepten/random",
         "random.html"
     )
