@@ -1,0 +1,28 @@
+{
+  "name": "dagelijkseKost",
+  "version": "0.1.0",
+  "description": "The Dagelijkse Kost website for mobile",
+  "keywords": [
+    "Dagelijkse Kost",
+    "Jeroen Meus",
+    "recipes",
+    "mobile"
+  ],
+  "license": "MIT",
+  "author": "Nicolas De Jaeghere <nicodeja@mac.com>",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "test": "nodeunit test"
+  },
+  "dependencies": {
+    "cheerio": "~0.18",
+    "lodash": "~2.4",
+    "q": "~1.1",
+    "request": "~2.51"
+  },
+  "devDependencies": {
+    "nodeunit": "~0.9"
+  },
+  "private": true
+}
