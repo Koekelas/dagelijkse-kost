@@ -11,4 +11,5 @@ site.
     }).
     then(function (recipe) {
         console.log(JSON.stringify(recipe));
-    });
+    }).
+    done();
