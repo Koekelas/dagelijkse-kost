@@ -2,14 +2,25 @@
 
 "use strict";
 
-var site = require("./lib/scraper").site;
+var q = require("q"),
+    site = require("./lib/scraper").site,
 
-site.
+    recipesPage = site.createRecipesPage();
+
+recipesPage.
     getRecipeUrls().
     then(function (recipeUrls) {
-        return site.getRecipe(recipeUrls[0]);
+        return recipesPage.createRecipePage(recipeUrls[0]);
     }).
-    then(function (recipe) {
+    then(function (recipePage) {
+        return recipePage.
+            createRecipeImage().
+            then(function (recipeImage) {
+                return q.all([recipePage.getRecipe(), recipeImage.toDataUri()]);
+            });
+    }).
+    spread(function (recipe, image) {
         console.log(JSON.stringify(recipe));
+        console.log(image);
     }).
     done();
