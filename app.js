@@ -16,10 +16,11 @@ recipesPage.
         return recipePage.
             createRecipeImage().
             then(function (recipeImage) {
-                return q.all([recipePage.getRecipe(), recipeImage.toDataUri()]);
+                return q.all([recipePage.getSlug(), recipePage.getRecipe(), recipeImage.toDataUri()]);
             });
     }).
-    spread(function (recipe, image) {
+    spread(function (slug, recipe, image) {
+        console.log(slug);
         console.log(JSON.stringify(recipe));
         console.log(image);
     }).
