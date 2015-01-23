@@ -22,12 +22,8 @@ var fs = require("fs"),
                             return JSON.parse(config);
                         },
                         function onFailure() {
-                            return writeFile(
-                                CONFIG_PATH,
-                                JSON.stringify(DEFAULT_CONFIG, null, TAB_SIZE)
-                            ).then(function () {
-                                return readConfig();
-                            });
+                            return writeFile(CONFIG_PATH, JSON.stringify(DEFAULT_CONFIG, null, TAB_SIZE)).
+                                then(readConfig);
                         }
                     );
                 };
