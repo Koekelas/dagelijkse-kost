@@ -161,6 +161,16 @@ module.exports = {
     },
     getRecipeShouldReturnARecipe4: function (test) {
         fixtures.
+            pureeRecipePage.
+            getRecipe().
+            then(function (recipe) {
+                test.deepEqual(recipe, recipes.puree);
+                test.done();
+            }).
+            done();
+    },
+    getRecipeShouldReturnARecipe5: function (test) {
+        fixtures.
             toastRecipePage.
             getRecipe().
             then(function (recipe) {

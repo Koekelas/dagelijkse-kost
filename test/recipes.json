@@ -5,16 +5,16 @@
       "hoofdgerecht",
       "klassieker"
     ],
-    "cookingTime": "80 minuten",
+    "time": "80 minuten",
     "introduction": [
       "Balletjes in tomatensaus, da’s wellicht één van de allerlekkerste gerechten uit onze Vlaamse keuken. Voor de tomatensaus heb je wel heel wat ingrediënten nodig, want alleen zo krijgt de saus heel veel smaak. Dat is het geheim van een top-tomatensaus.",
       "Gehaktballetjes maken is helemaal niet moeilijk, en als je de twee nadien samenbrengt in één pot dan is het pas echt smullen geblazen! De balletjes smaken heel lekker met bv. verse aardappelpuree, maar dat kunnen net zo goed frietjes of rijst zijn. Dat beslis je zelf!"
     ],
-    "kitchenUtensils": [
+    "utensils": [
       "eindje keukentouw",
       "grote zeef"
     ],
-    "sideDishes": ["Serveer de balletjes met bv. verse aardappelpuree."],
+    "sides": ["Serveer de balletjes met bv. verse aardappelpuree."],
     "price": 3,
     "ingredients": {
       "servings": 4,
@@ -114,7 +114,7 @@
   "caesardressing": {
     "name": "Caesardressing",
     "tags": ["basistechnieken"],
-    "cookingTime": "15 minuten",
+    "time": "15 minuten",
     "ingredients": {
       "servings": 4,
       "groups": [
@@ -152,11 +152,11 @@
       "snack",
       "vernieuwend"
     ],
-    "cookingTime": "80 minuten (incl. 30 minuten baktijd)",
+    "time": "80 minuten (incl. 30 minuten baktijd)",
     "introduction": [
       "Zoete cupcakes zijn helemaal ‘in’. Jeroen doet een beetje tegendraads en maakt hartige cupcakes op basis van aardappelen. Ze zijn lekker als snack, maar je kan ze net zo goed serveren als een origineel aardappelalternatief bij een hoofdgerecht met vlees, vis of kip. Kortom, met een simpel patatje kan je heel erg leuke dingen doen."
     ],
-    "kitchenUtensils": [
+    "utensils": [
       "spuitzak van plastic",
       "10 stevige papieren cups"
     ],
@@ -202,17 +202,49 @@
       }
     ]
   },
+  "puree": {
+    "name": "aardappelpuree",
+    "tags": ["basistechnieken"],
+    "introduction": ["Deze smeuïge puree kan je serveren bij heel wat gerechten. Jeroen maakte deze puree klaar bij geroosterde lamsschouder."],
+    "ingredients": {
+      "servings": 4,
+      "groups": [
+        {
+          "ingredients": [
+            "1 kg aardappelen (loskokend)",
+            "3 eieren",
+            "150 g boter",
+            "2 dl melk",
+            "nootmuskaat",
+            "een suifje zout"
+          ]
+        }
+      ]
+    },
+    "instructions": [
+      {
+        "instructions": [
+          "Schil de aardappelen en kook ze gaar in licht gezouten water.",
+          "Zet een pot op het vuur, giet er de melk in en breng ze aan de kook. Snij de boter in klontjes en voeg ze toe. Kruid de melk met een snuifje zout.",
+          "Giet de aardappelen af en stamp ze fijn met een aardappelstamper.",
+          "Schenk het mengsel van hete melk en boter bij de geplette aardappelen.",
+          "Scheid de eieren en roer de dooiers meteen onder de puree. De eiwitten gebruik je niet.",
+          "Proef de puree en voeg indien nodig wat zout toe. Wie ervan houdt kan ook wat versgeraspte nootmuskaat toevoegen."
+        ]
+      }
+    ]
+  },
   "toast": {
     "name": "Zuiderse toast champignon met limoen-ricotta en rucola",
     "tags": [
       "klassieker",
       "snack"
     ],
-    "cookingTime": "30 minuten",
+    "time": "30 minuten",
     "introduction": [
       "De ‘toast champignon’ is een onverwoestbare klassieker uit de bistrokeuken. ’t Is een redelijk zwaar gerecht en daarom bedacht Jeroen de Zuiderse versie van de toast met een fris kaasmengsel van ricotta en een beetje limoen. De klassieke Parijse champignons vervangt hij door een paddenstoelenmengeling die iedereen naar smaak en aanbod kan samenstellen. Zuurdesembrood is zeer geschikt voor de toast."
     ],
-    "kitchenUtensils": [
+    "utensils": [
       "grillpan",
       "borsteltje"
     ],
