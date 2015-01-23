@@ -36,8 +36,9 @@ var fs = require("fs"),
             run = function run() {
                 readConfig().
                     then(function (config) {
-                        var db = new Pouchdb(config.couchdbUrl);
-                        return archiver.archiveRecipes(db);
+                        var db = new Pouchdb(config.couchdbUrl),
+                            a = archiver({db: db});
+                        return a.archiveRecipes();
                     }).
                     done();
             },
