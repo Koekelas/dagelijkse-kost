@@ -9,7 +9,7 @@ var fs = require("fs"),
 
     app = (function app() {
         var CONFIG_PATH = "./config.json",
-            DEFAULT_CONFIG = {couchdbUrl: ""},
+            DEFAULT_CONFIG = {couchdbUrl: "http://localhost:5984/dagelijkse-kost"},
             TAB_SIZE = 2,
 
             readConfig = (function () {
