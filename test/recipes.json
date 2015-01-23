@@ -202,6 +202,38 @@
       }
     ]
   },
+  "puree": {
+    "name": "aardappelpuree",
+    "tags": ["basistechnieken"],
+    "introduction": ["Deze smeuïge puree kan je serveren bij heel wat gerechten. Jeroen maakte deze puree klaar bij geroosterde lamsschouder."],
+    "ingredients": {
+      "servings": 4,
+      "groups": [
+        {
+          "ingredients": [
+            "1 kg aardappelen (loskokend)",
+            "3 eieren",
+            "150 g boter",
+            "2 dl melk",
+            "nootmuskaat",
+            "een suifje zout"
+          ]
+        }
+      ]
+    },
+    "instructions": [
+      {
+        "instructions": [
+          "Schil de aardappelen en kook ze gaar in licht gezouten water.",
+          "Zet een pot op het vuur, giet er de melk in en breng ze aan de kook. Snij de boter in klontjes en voeg ze toe. Kruid de melk met een snuifje zout.",
+          "Giet de aardappelen af en stamp ze fijn met een aardappelstamper.",
+          "Schenk het mengsel van hete melk en boter bij de geplette aardappelen.",
+          "Scheid de eieren en roer de dooiers meteen onder de puree. De eiwitten gebruik je niet.",
+          "Proef de puree en voeg indien nodig wat zout toe. Wie ervan houdt kan ook wat versgeraspte nootmuskaat toevoegen."
+        ]
+      }
+    ]
+  },
   "toast": {
     "name": "Zuiderse toast champignon met limoen-ricotta en rucola",
     "tags": [

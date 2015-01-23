@@ -19,6 +19,10 @@ module.exports = {
         "http://www.een.be/programmas/dagelijkse-kost/recepten/aardappel-cupcakes",
         "aardappelCupcakesRecipe.html"
     ),
+    pureeRecipePage: resourceFactory.createRecipePage(
+        "http://www.een.be/programmas/dagelijkse-kost/recepten/aardappelpuree",
+        "aardappelpuree.html"
+    ),
     toastRecipePage: resourceFactory.createRecipePage(
         "http://www.een.be/programmas/dagelijkse-kost/recepten/" +
             "zuiderse-toast-champignon-met-limoen-ricotta-en-rucola",
