@@ -3,12 +3,14 @@
 "use strict";
 
 var fs = require("fs"),
+    dnscache = require("dnscache"),
     Pouchdb = require("pouchdb"),
     q = require("q"),
     archiver = require("./lib/archiver"),
 
     app = (function app() {
-        var CONFIG_PATH = "./config.json",
+        var ONE_SECOND = 1,
+            CONFIG_PATH = "./config.json",
             DEFAULT_CONFIG = {couchdbUrl: "http://localhost:5984/dagelijkse-kost"},
             TAB_SIZE = 2,
 
@@ -40,6 +42,8 @@ var fs = require("fs"),
             },
 
             initialise = function initialise() {
+                dnscache({enable: true, ttl: ONE_SECOND * 60 * 10}); //dnscache modifies the standard dns
+                                                                     //library
                 return {run: run};
             };
 
