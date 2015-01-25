@@ -1,6 +1,6 @@
 {
   "name": "dagelijkse-kost",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "description": "The Dagelijkse Kost website for mobile",
   "keywords": [
     "Dagelijkse Kost",
@@ -17,6 +17,7 @@
   },
   "dependencies": {
     "cheerio": "~0.18",
+    "dnscache": "~0.0",
     "lodash": "~2.4",
     "pouchdb": "~3.2",
     "q": "~1.1",
