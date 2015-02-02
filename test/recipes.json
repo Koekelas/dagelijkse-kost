@@ -15,7 +15,7 @@
       "grote zeef"
     ],
     "sides": ["Serveer de balletjes met bv. verse aardappelpuree."],
-    "price": 3,
+    "price": 300,
     "ingredients": {
       "servings": 4,
       "groups": [
@@ -161,7 +161,7 @@
       "10 stevige papieren cups"
     ],
     "tips": ["Met dit recept maak je een tiental cupcakes per 4 personen."],
-    "price": 1.5,
+    "price": 150,
     "ingredients": {
       "servings": 4,
       "groups": [
@@ -248,7 +248,7 @@
       "grillpan",
       "borsteltje"
     ],
-    "price": 4,
+    "price": 400,
     "ingredients": {
       "servings": 4,
       "groups": [
