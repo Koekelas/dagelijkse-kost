@@ -33,11 +33,29 @@ var fs = require("fs"),
 
             run = function run() {
                 readConfig().
-                    then(function (config) {
-                        var db = new Pouchdb(config.couchdbUrl),
-                            a = archiver({db: db});
-                        return a.archiveRecipes();
-                    }).
+                    then(
+                        function onSuccess(config) {
+                            var db = new Pouchdb(config.couchdbUrl),
+                                a = archiver({db: db});
+                            a.
+                                archiveRecipes().
+                                fail(function (error) {
+                                    console.log({
+                                        name: "unexpected error",
+                                        message: "expected to be able to archive recipes",
+                                        originalError: error
+                                    });
+                                }).
+                                done();
+                        },
+                        function onFailure(error) {
+                            throw {
+                                name: "unexpected error",
+                                message: "expected to be able to read config",
+                                originalError: error
+                            };
+                        }
+                    ).
                     done();
             },
 
