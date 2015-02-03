@@ -8,9 +8,15 @@
     "recipes",
     "mobile"
   ],
+  "homepage": "https://github.com/Koekelas/dagelijkse-kost",
+  "bugs": "https://github.com/Koekelas/dagelijkse-kost/issues",
   "license": "MIT",
   "author": "Nicolas De Jaeghere <nicodeja@mac.com>",
   "main": "app.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Koekelas/dagelijkse-kost.git"
+  },
   "scripts": {
     "start": "node app.js",
     "test": "nodeunit test"
@@ -18,10 +24,10 @@
   "dependencies": {
     "cheerio": "~0.18",
     "dnscache": "~0.0",
-    "lodash": "~2.4",
-    "pouchdb": "~3.2",
+    "lodash": "~3.1",
+    "pouchdb": "~3.3",
     "q": "~1.1",
-    "request": "~2.51"
+    "request": "~2.53"
   },
   "devDependencies": {
     "nodeunit": "~0.9"
