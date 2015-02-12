@@ -9,6 +9,7 @@ var fs = require("fs"),
     lodash = require("lodash"),
     pouchdb = require("pouchdb"),
     q = require("q"),
+    scheduler = require("node-schedule"),
     archiver = require("./lib/archiver"),
 
     app = (function app() {
@@ -74,22 +75,35 @@ var fs = require("fs"),
             run = function run() {
                 readConfig().
                     then(
-                        function onSuccess(config) {
-                            var db = pouchdb(config.
-                                    dbServer.
-                                    connectionString),
-                                a = archiver({db: db});
-                            a.
-                                archiveRecipes().
-                                fail(function (error) {
-                                    console.log({
-                                        name: "unexpected error",
-                                        message: "expected to be able to archive recipes",
-                                        originalError: error
-                                    });
-                                }).
-                                done();
-                        },
+                        (function () {
+                            var archiveRecipes = function archiveRecipes(db) {
+                                var a = archiver({db: db});
+                                return function () {
+                                    a.
+                                        archiveRecipes().
+                                        fail(function (error) {
+                                            console.log({
+                                                name: "unexpected error",
+                                                message: "expected to be able to archive recipes",
+                                                originalError: error
+                                            });
+                                        }).
+                                        done();
+                                };
+                            };
+
+                            return function onSuccess(config) {
+                                var db = pouchdb(config.
+                                        dbServer.
+                                        connectionString);
+                                scheduler.scheduleJob(
+                                    config.
+                                        scheduler.
+                                        archiver,
+                                    archiveRecipes(db)
+                                );
+                            };
+                        }()),
                         function onFailure(error) {
                             throw {
                                 name: "unexpected error",
