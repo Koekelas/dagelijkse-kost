@@ -7,7 +7,7 @@ var fs = require("fs"),
     util = require("util"),
     dnscache = require("dnscache"),
     lodash = require("lodash"),
-    Pouchdb = require("pouchdb"),
+    pouchdb = require("pouchdb"),
     q = require("q"),
     archiver = require("./lib/archiver"),
 
@@ -75,7 +75,7 @@ var fs = require("fs"),
                 readConfig().
                     then(
                         function onSuccess(config) {
-                            var db = new Pouchdb(config.
+                            var db = pouchdb(config.
                                     dbServer.
                                     connectionString),
                                 a = archiver({db: db});
