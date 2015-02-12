@@ -2,8 +2,7 @@
 
 "use strict";
 
-var path = require("path"),
-    util = require("util"),
+var util = require("util"),
     mergeTrees = require("broccoli-merge-trees"),
     copyFiles = require("broccoli-static-compiler"),
     replaceStrings = require("broccoli-replace"),
@@ -13,9 +12,8 @@ var path = require("path"),
     ENV = process.
             env.
             NODE_ENV || "development",
-    ROOT_TREE = __dirname,
-    PUBLIC_TREE = path.join(ROOT_TREE, "public"),
-    BOWER_TREE = path.join(ROOT_TREE, "bower_components"),
+    PUBLIC_TREE = "./public",
+    BOWER_TREE = "./bower_components",
     PATHS = {
         DEVELOPMENT: {
             BOOTSTRAP_CSS: "./vendor/bootstrap/css/bootstrap.css",
@@ -38,7 +36,7 @@ var path = require("path"),
         }
     }[ENV.toUpperCase()],
 
-    createMarkupTree = function createMarkupTree() {
+    createPublicTree = function createPublicTree() {
         var tree = copyFiles(PUBLIC_TREE, {srcDir: ".", files: ["./images", "./index.html"], destDir: "."});
         tree = replaceStrings(
             tree,
@@ -68,7 +66,10 @@ var path = require("path"),
         );
         switch (ENV) {
         case "development":
-            tree = mergeTrees([tree, copyFiles(PUBLIC_TREE, {srcDir: ".", files: ["./app.js"], destDir: "."})]);
+            tree = mergeTrees([
+                tree,
+                copyFiles(PUBLIC_TREE, {srcDir: ".", files: ["./app.js"], destDir: "."})
+            ]);
             break;
         case "production":
             tree = minifyScripts(tree);
@@ -96,4 +97,4 @@ var path = require("path"),
         return mergeTrees(trees);
     };
 
-module.exports = mergeTrees([createMarkupTree(), createScriptBundleTree(), createVendorTree()]);
+module.exports = mergeTrees([createPublicTree(), createScriptBundleTree(), createVendorTree()]);
