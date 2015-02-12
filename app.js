@@ -7,10 +7,10 @@ var fs = require("fs"),
     util = require("util"),
     dnscache = require("dnscache"),
     lodash = require("lodash"),
-    pouchdb = require("pouchdb"),
     q = require("q"),
     scheduler = require("node-schedule"),
     archiver = require("./lib/archiver"),
+    db = require("./lib/db"),
 
     app = (function app() {
         var ONE_SECOND = 1,
@@ -75,8 +75,8 @@ var fs = require("fs"),
                 readConfig().
                     then(
                         (function () {
-                            var archiveRecipes = function archiveRecipes(db) {
-                                var a = archiver({db: db});
+                            var archiveRecipes = function archiveRecipes(d) {
+                                var a = archiver({db: d});
                                 return function () {
                                     a.
                                         archiveRecipes().
@@ -92,14 +92,11 @@ var fs = require("fs"),
                             };
 
                             return function onSuccess(config) {
-                                var db = pouchdb(config.
-                                    dbServer.
-                                    connectionString);
                                 scheduler.scheduleJob(
                                     config.
                                         scheduler.
                                         archiver,
-                                    archiveRecipes(db)
+                                    archiveRecipes(db(config.dbServer))
                                 );
                             };
                         }()),
