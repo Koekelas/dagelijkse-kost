@@ -23,7 +23,7 @@ var path = require("path"),
             EMBER_JS: "./vendor/ember/ember.debug.js",
             EMBER_DATA_JS: "./vendor/ember-data/ember-data.js",
             POUCHDB: "./vendor/pouchdb/pouchdb.js",
-            RELATIONAL_POUCH: "./vendor/relatinal-pouch/pouchdb.relational-pouch.js",
+            RELATIONAL_POUCH: "./vendor/relational-pouch/pouchdb.relational-pouch.js",
             EMBER_POUCH: "./vendor/ember-pouch/main.js"
         },
         PRODUCTION: {
@@ -33,7 +33,7 @@ var path = require("path"),
             EMBER_DATA_JS: "//cdnjs.cloudflare.com/ajax/libs/ember-data.js/1.0.0-beta.14.1/" +
                 "ember-data.min.js",
             POUCHDB: "//cdnjs.cloudflare.com/ajax/libs/pouchdb/3.3.0/pouchdb.min.js",
-            RELATIONAL_POUCH: "./vendor/relatinal-pouch/pouchdb.relational-pouch.min.js",
+            RELATIONAL_POUCH: "./vendor/relational-pouch/pouchdb.relational-pouch.min.js",
             EMBER_POUCH: "./vendor/ember-pouch/main.js"
         }
     }[ENV.toUpperCase()],
