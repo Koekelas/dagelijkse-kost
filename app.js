@@ -33,36 +33,35 @@ var fs = require("fs"),
 
             readConfig = (function () {
                 var readFile = q.denodeify(fs.readFile),
-                    writeFile = q.denodeify(fs.writeFile),
-                    constructDbString = function constructDbString(dbConfig) {
-                        return url.format({
-                            protocol: dbConfig.https ? "https" : "http",
-                            hostname: dbConfig.hostname,
-                            port: dbConfig.port,
-                            auth: util.format("%s:%s", dbConfig.user, dbConfig.pass),
-                            pathname: dbConfig.db
-                        });
-                    };
+                    writeFile = q.denodeify(fs.writeFile);
 
                 return function readConfig() {
                     return readFile(CONFIG_PATH, {encoding: "utf8"}).then(
                         function onSuccess(config) {
                             var c = JSON.parse(config),
-                                openshiftConfig = {
-                                    hostname: process.
-                                        env.
-                                        OPENSHIFT_NODEJS_IP,
-                                    port: process.
-                                        env.
-                                        OPENSHIFT_NODEJS_PORT
-                                },
-                                httpConfig = c.httpServer,
                                 dbConfig = c.dbServer;
-                            if (openshiftConfig.hostname) {
-                                lodash.merge(httpConfig, openshiftConfig);
-                            }
-                            dbConfig.connectionString = constructDbString(dbConfig);
-                            return c;
+                            return lodash.merge(
+                                c,
+                                {
+                                    httpServer: {
+                                        hostname: process.
+                                            env.
+                                            OPENSHIFT_NODEJS_IP,
+                                        port: process.
+                                            env.
+                                            OPENSHIFT_NODEJS_PORT
+                                    },
+                                    dbServer: {
+                                        connectionString: url.format({
+                                            protocol: dbConfig.https ? "https" : "http",
+                                            hostname: dbConfig.hostname,
+                                            port: dbConfig.port,
+                                            auth: util.format("%s:%s", dbConfig.user, dbConfig.pass),
+                                            pathname: dbConfig.db
+                                        })
+                                    }
+                                }
+                            );
                         },
                         function onFailure() {
                             return writeFile(CONFIG_PATH, JSON.stringify(DEFAULT_CONFIG, null, TAB_SIZE)).
@@ -94,8 +93,8 @@ var fs = require("fs"),
 
                             return function onSuccess(config) {
                                 var db = pouchdb(config.
-                                        dbServer.
-                                        connectionString);
+                                    dbServer.
+                                    connectionString);
                                 scheduler.scheduleJob(
                                     config.
                                         scheduler.
