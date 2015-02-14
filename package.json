@@ -12,7 +12,7 @@
   "bugs": "https://github.com/Koekelas/dagelijkse-kost/issues",
   "license": "MIT",
   "author": "Nicolas De Jaeghere <nicodeja@mac.com>",
-  "main": "app.js",
+  "main": "./app.js",
   "repository": {
     "type": "git",
     "url": "https://github.com/Koekelas/dagelijkse-kost.git"

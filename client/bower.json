@@ -13,7 +13,7 @@
   "authors": [
     "Nicolas De Jaeghere <nicodeja@mac.com>"
   ],
-  "main": "client/index.html",
+  "main": "./client/index.html",
   "dependencies": {
     "ember-pouch": "~1.1"
   },
