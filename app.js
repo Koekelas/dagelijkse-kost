@@ -11,6 +11,7 @@ var fs = require("fs"),
     scheduler = require("node-schedule"),
     archiver = require("./lib/archiver"),
     db = require("./lib/db"),
+    httpServer = require("./lib/httpServer"),
 
     app = (function app() {
         var ONE_SECOND = 1,
@@ -92,6 +93,7 @@ var fs = require("fs"),
                             };
 
                             return function onSuccess(config) {
+                                httpServer(config.httpServer);
                                 scheduler.scheduleJob(
                                     config.
                                         scheduler.
