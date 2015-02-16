@@ -24,12 +24,16 @@
   },
   "dependencies": {
     "broccoli": "~0.13",
+    "broccoli-cli": "~0.0",
     "broccoli-merge-trees": "~0.2",
     "broccoli-replace": "~0.2",
     "broccoli-static-compiler": "~0.2",
     "broccoli-uglify-js": "~0.1",
     "broccoli-watchify": "~0.2",
     "browserify-shim": "~3.8"
+  },
+  "devDependencies": {
+    "broccoli-timepiece": "~0.3"
   },
   "private": true,
   "browserify": {

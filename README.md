@@ -23,7 +23,7 @@ Inside the project root directory, run:
 
 ```bash
 export NODE_ENV=development
-npm install --global bower broccoli-cli broccoli-timepiece
+npm install --global bower
 npm install
 npm start
 cd client
@@ -38,7 +38,7 @@ Inside the project root directory, run:
 
 ```bash
 export NODE_ENV=production
-npm install --global bower broccoli-cli
+npm install --global bower
 npm install --production
 npm start
 cd client
