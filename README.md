@@ -25,7 +25,7 @@ Inside the project root directory, run:
 export NODE_ENV=development
 npm install --global bower
 npm install
-npm start
+npm run watch
 cd client
 npm install
 bower install
