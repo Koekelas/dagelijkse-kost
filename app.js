@@ -93,12 +93,12 @@ var fs = require("fs"),
                             };
 
                             return function onSuccess(config) {
-                                httpServer(config.httpServer);
+                                httpServer({config: config.httpServer});
                                 scheduler.scheduleJob(
                                     config.
                                         scheduler.
                                         archiver,
-                                    archiveRecipes(db(config.dbServer))
+                                    archiveRecipes(db({config: config.dbServer}))
                                 );
                             };
                         }()),
