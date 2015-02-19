@@ -20,9 +20,9 @@ var util = require("util"),
             JQUERY_JS: "./vendor/jquery/jquery.js",
             EMBER_JS: "./vendor/ember/ember.debug.js",
             EMBER_DATA_JS: "./vendor/ember-data/ember-data.js",
-            POUCHDB: "./vendor/pouchdb/pouchdb.js",
-            RELATIONAL_POUCH: "./vendor/relational-pouch/pouchdb.relational-pouch.js",
-            EMBER_POUCH: "./vendor/ember-pouch/main.js"
+            POUCHDB_JS: "./vendor/pouchdb/pouchdb.js",
+            RELATIONAL_POUCH_JS: "./vendor/relational-pouch/pouchdb.relational-pouch.js",
+            EMBER_POUCH_JS: "./vendor/ember-pouch/main.js"
         },
         PRODUCTION: {
             BOOTSTRAP_CSS: "//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.2/css/bootstrap.min.css",
@@ -30,9 +30,9 @@ var util = require("util"),
             EMBER_JS: "//cdnjs.cloudflare.com/ajax/libs/ember.js/1.10.0/ember.min.js",
             EMBER_DATA_JS: "//cdnjs.cloudflare.com/ajax/libs/ember-data.js/1.0.0-beta.14.1/" +
                 "ember-data.min.js",
-            POUCHDB: "//cdnjs.cloudflare.com/ajax/libs/pouchdb/3.3.0/pouchdb.min.js",
-            RELATIONAL_POUCH: "./vendor/relational-pouch/pouchdb.relational-pouch.min.js",
-            EMBER_POUCH: "./vendor/ember-pouch/main.js"
+            POUCHDB_JS: "//cdnjs.cloudflare.com/ajax/libs/pouchdb/3.3.0/pouchdb.min.js",
+            RELATIONAL_POUCH_JS: "./vendor/relational-pouch/pouchdb.relational-pouch.min.js",
+            EMBER_POUCH_JS: "./vendor/ember-pouch/main.js"
         }
     }[ENV.toUpperCase()],
 
