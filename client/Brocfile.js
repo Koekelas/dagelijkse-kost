@@ -68,7 +68,7 @@ var util = require("util"),
         case "development":
             tree = mergeTrees([
                 tree,
-                copyFiles(PUBLIC_TREE, {srcDir: ".", files: ["./app.js"], destDir: "."})
+                copyFiles(PUBLIC_TREE, {srcDir: ".", files: ["./app.js", "./config.json"], destDir: "."})
             ]);
             break;
         case "production":

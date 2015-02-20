@@ -17,6 +17,7 @@
     "url": "https://github.com/Koekelas/dagelijkse-kost.git"
   },
   "scripts": {
+    "create-config": "node ./createConfig.js",
     "build": "broccoli build ./dist",
     "clean": "if [ -d \"./dist\" ]; then\nrm -r ./dist\nfi\nif [ -d \"./tmp\" ]; then\nrm -r ./tmp\nfi",
     "rebuild": "npm run clean && npm run build",
@@ -30,7 +31,8 @@
     "broccoli-static-compiler": "~0.2",
     "broccoli-uglify-js": "~0.1",
     "broccoli-watchify": "~0.2",
-    "browserify-shim": "~3.8"
+    "browserify-shim": "~3.8",
+    "q": "~1.1"
   },
   "devDependencies": {
     "broccoli-timepiece": "~0.3"

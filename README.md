@@ -17,7 +17,7 @@ git clone https://github.com/Koekelas/dagelijkse-kost.git
 
 Install [Node.js](http://nodejs.org/ "Node.js Homepage") and [CouchDB](https://couchdb.apache.org/ "CouchDB Homepage").
 
-### Running dagelijkse-kost in development mode
+### Running in development mode
 
 Inside the project root directory, run:
 
@@ -29,10 +29,11 @@ npm run watch
 cd client
 npm install
 bower install
+npm run create-config
 npm run watch
 ```
 
-### Running dagelijkse-kost in production mode
+### Running in production mode
 
 Inside the project root directory, run:
 
@@ -44,12 +45,23 @@ npm start
 cd client
 npm install --production
 bower install --production
+npm run create-config
 npm run build
 ```
 
-## Configuring the server
+## Configuring dagelijkse-kost
+
+### Configuring the server
 
 Server configuration is found in ./config.json. A default configuration will be written when the file fails to load.
+
+### Configuring the client
+
+Client configuration is found in ./client/public/config.json. To generate a default config, inside the client root directory, run:
+
+```bash
+npm run create-config
+```
 
 
 # Running the tests
