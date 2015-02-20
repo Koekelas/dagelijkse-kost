@@ -20,6 +20,7 @@
   "scripts": {
     "start": "node app.js",
     "test": "nodeunit test",
+    "create-config": "node ./createConfig.js",
     "watch": "nodemon app.js"
   },
   "dependencies": {

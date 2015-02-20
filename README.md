@@ -25,6 +25,7 @@ Inside the project root directory, run:
 export NODE_ENV=development
 npm install --global bower
 npm install
+npm run create-config
 npm run watch
 cd client
 npm install
@@ -41,6 +42,7 @@ Inside the project root directory, run:
 export NODE_ENV=production
 npm install --global bower
 npm install --production
+npm run create-config
 npm start
 cd client
 npm install --production
@@ -53,7 +55,11 @@ npm run build
 
 ### Configuring the server
 
-Server configuration is found in ./config.json. A default configuration will be written when the file fails to load.
+Server configuration is found in ./config.json. To generate a default config, inside the server root directory, run:
+
+```bash
+npm run create-config
+```
 
 ### Configuring the client
 
@@ -66,7 +72,7 @@ npm run create-config
 
 # Running the tests
 
-Inside the project root directory, run:
+Inside the server root directory, run:
 
 ```bash
 npm test
