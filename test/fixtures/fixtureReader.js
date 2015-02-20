@@ -11,7 +11,7 @@ module.exports = (function fixtureReader() {
             var readFile = q.denodeify(fs.readFile);
 
             return function readFixture(fileName) {
-                return readFile(path.join(__dirname, fileName), {encoding: "utf8"});
+                return readFile(path.join("./test/fixtures", fileName), {encoding: "utf8"});
             };
         }()),
 
