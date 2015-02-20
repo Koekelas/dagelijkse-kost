@@ -28,9 +28,9 @@ var util = require("util"),
             BOOTSTRAP_CSS: "//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.2/css/bootstrap.min.css",
             JQUERY_JS: "//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js",
             EMBER_JS: "//cdnjs.cloudflare.com/ajax/libs/ember.js/1.10.0/ember.min.js",
-            EMBER_DATA_JS: "//cdnjs.cloudflare.com/ajax/libs/ember-data.js/1.0.0-beta.14.1/" +
+            EMBER_DATA_JS: "//cdnjs.cloudflare.com/ajax/libs/ember-data.js/1.0.0-beta.15.1/" +
                 "ember-data.min.js",
-            POUCHDB_JS: "//cdnjs.cloudflare.com/ajax/libs/pouchdb/3.3.0/pouchdb.min.js",
+            POUCHDB_JS: "//cdnjs.cloudflare.com/ajax/libs/pouchdb/3.3.1/pouchdb.min.js",
             RELATIONAL_POUCH_JS: "./vendor/relational-pouch/pouchdb.relational-pouch.min.js",
             EMBER_POUCH_JS: "./vendor/ember-pouch/main.js"
         }
