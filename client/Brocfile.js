@@ -17,6 +17,7 @@ var util = require("util"),
     PATHS = {
         DEVELOPMENT: {
             BOOTSTRAP_CSS: "./vendor/bootstrap/css/bootstrap.css",
+            LODASH_JS: "./vendor/lodash/lodash.js",
             JQUERY_JS: "./vendor/jquery/jquery.js",
             EMBER_JS: "./vendor/ember/ember.debug.js",
             EMBER_DATA_JS: "./vendor/ember-data/ember-data.js",
@@ -26,6 +27,7 @@ var util = require("util"),
         },
         PRODUCTION: {
             BOOTSTRAP_CSS: "//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.2/css/bootstrap.min.css",
+            LODASH_JS: "//cdnjs.cloudflare.com/ajax/libs/lodash.js/3.2.0/lodash.min.js",
             JQUERY_JS: "//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js",
             EMBER_JS: "//cdnjs.cloudflare.com/ajax/libs/ember.js/1.10.0/ember.min.js",
             EMBER_DATA_JS: "//cdnjs.cloudflare.com/ajax/libs/ember-data.js/1.0.0-beta.15.1/" +
@@ -68,7 +70,10 @@ var util = require("util"),
         case "development":
             tree = mergeTrees([
                 tree,
-                copyFiles(PUBLIC_TREE, {srcDir: ".", files: ["./app.js", "./config.json"], destDir: "."})
+                copyFiles(
+                    PUBLIC_TREE,
+                    {srcDir: ".", files: ["./lib/*", "./app.js", "./config.json"], destDir: "."}
+                )
             ]);
             break;
         case "production":
@@ -86,8 +91,9 @@ var util = require("util"),
         switch (ENV) {
         case "development":
             trees = trees.concat(
-                copyFiles(BOWER_TREE, {srcDir: "./bootstrap/dist", destDir: "./vendor/bootstrap"}),
+                copyFiles(BOWER_TREE, {srcDir: "./lodash", destDir: "./vendor/lodash"}),
                 copyFiles(BOWER_TREE, {srcDir: "./jquery/dist", destDir: "./vendor/jquery"}),
+                copyFiles(BOWER_TREE, {srcDir: "./bootstrap/dist", destDir: "./vendor/bootstrap"}),
                 copyFiles(BOWER_TREE, {srcDir: "./ember", destDir: "./vendor/ember"}),
                 copyFiles(BOWER_TREE, {srcDir: "./ember-data", destDir: "./vendor/ember-data"}),
                 copyFiles(BOWER_TREE, {srcDir: "./pouchdb/dist", destDir: "./vendor/pouchdb"})

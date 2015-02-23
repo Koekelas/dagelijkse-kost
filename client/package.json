@@ -42,6 +42,10 @@
     "transform": ["browserify-shim"]
   },
   "browserify-shim": {
-    "ember": "global:Ember"
+    "ember": "global:Ember",
+    "emberdata": "global:DS",
+    "emberpouch": "global:EmberPouch",
+    "lodash": "global:_",
+    "pouchdb": "global:PouchDB"
   }
 }

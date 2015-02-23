@@ -19,7 +19,8 @@
   },
   "devDependencies": {
     "bootstrap": "~3.3",
-    "ember": "~1.10"
+    "ember": "~1.10",
+    "lodash": "~3.2"
   },
   "private": true
 }
