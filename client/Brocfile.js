@@ -27,7 +27,7 @@ var util = require("util"),
         },
         PRODUCTION: {
             BOOTSTRAP_CSS: "//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.2/css/bootstrap.min.css",
-            LODASH_JS: "//cdnjs.cloudflare.com/ajax/libs/lodash.js/3.2.0/lodash.min.js",
+            LODASH_JS: "//cdnjs.cloudflare.com/ajax/libs/lodash.js/3.4.0/lodash.min.js",
             JQUERY_JS: "//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js",
             EMBER_JS: "//cdnjs.cloudflare.com/ajax/libs/ember.js/1.10.0/ember.min.js",
             EMBER_DATA_JS: "//cdnjs.cloudflare.com/ajax/libs/ember-data.js/1.0.0-beta.15.1/" +

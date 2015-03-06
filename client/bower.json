@@ -20,7 +20,7 @@
   "devDependencies": {
     "bootstrap": "~3.3",
     "ember": "~1.10",
-    "lodash": "~3.2"
+    "lodash": "~3.4"
   },
   "private": true
 }
