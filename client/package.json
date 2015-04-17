@@ -24,8 +24,8 @@
     "watch": "npm run clean && broccoli-timepiece ./dist"
   },
   "dependencies": {
-    "broccoli": "~0.15",
-    "broccoli-cli": "~0.0",
+    "broccoli": "~0.16",
+    "broccoli-cli": "~1.0",
     "broccoli-merge-trees": "~0.2",
     "broccoli-replace": "~0.2",
     "broccoli-static-compiler": "~0.2",
